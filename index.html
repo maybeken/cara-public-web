@@ -1,0 +1,14 @@
+<script>
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const fileUrl = urlParams.get('file') || "";
+
+const source = document.getElementById('audioSource');
+source.src = fileUrl;
+</script>
+
+<audio controls>
+  <source id="audioSource" src="" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
