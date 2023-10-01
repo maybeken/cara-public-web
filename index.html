@@ -1,11 +1,13 @@
 <script>
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-
-const fileUrl = urlParams.get('file') || "";
-
-const source = document.getElementById('audioSource');
-source.src = fileUrl;
+document.onload = () => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  
+  const fileUrl = urlParams.get('file') || "";
+  
+  const source = document.getElementById('audioSource');
+  source.src = fileUrl;
+}
 </script>
 
 <audio controls>
