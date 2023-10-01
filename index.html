@@ -1,13 +1,23 @@
 <script>
+const manifest = {
+  files: {
+    tlp_1: "不會得到最愛最多只有更愛.mp3",
+    tlp_2: "一個人原來都可以盡興呀.mp3",
+    tlp_3: "努力過活 拼命無恙.mp3",
+    tlp_4: "我真係恭喜你哋呀.mp3",
+    tlp_5: "無視道與理是與非非.mp3",
+  }
+}
+
 window.onload = () => {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   
-  const fileUrl = urlParams.get('file') || "";
+  const fileUrl = urlParams.get("file") || manifest.files[urlParams.get("f")] || "";
   console.info(fileUrl);
   
   const source = document.getElementById('audioSource');
-  source.src = fileUrl;
+  source.src = `files/${fileUrl}`;
 }
 </script>
 
