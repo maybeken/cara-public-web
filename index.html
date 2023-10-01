@@ -1,9 +1,10 @@
 <script>
-document.onload = () => {
+window.onload = () => {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   
   const fileUrl = urlParams.get('file') || "";
+  console.info(fileUrl);
   
   const source = document.getElementById('audioSource');
   source.src = fileUrl;
